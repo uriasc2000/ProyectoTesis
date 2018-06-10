@@ -19,7 +19,7 @@
     <body>
      
      
-    <div><h3 style="color:#3498db";>LOCALIZADOR LINKIT ONE</h3></div>
+    <div><h3 style="color:#3498db";>LOCALIZADOR</h3></div>
      
     <div id="map" style="width:50%;height:500px; border-radius:5px;border:1px solid  #3498db ;"></div>
      
