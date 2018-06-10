@@ -2,7 +2,7 @@
     <html>
     <head>
      
-    	<title>Localizador</title>
+    	<title>Localizador linkit one</title>
      
     		<script type="text/javascript" src="/jquery/jquery.min.js"></script>
 
@@ -19,7 +19,7 @@
     <body>
      
      
-    <div><h4 style="color:#3498db";>SISTEMASYMICROS</h4></div>
+    <div><h4 style="color:#3498db";>Localizador by linkit one</h4></div>
      
     <div id="map" style="width:50%;height:500px; border-radius:5px;border:1px solid  #3498db ;"></div>
      
