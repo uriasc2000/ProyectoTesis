@@ -2,7 +2,7 @@
     <html>
     <head>
      
-    	<title>Rastreador con linkit one</title>
+    	<title>Localizador</title>
      
     		<script type="text/javascript" src="/jquery/jquery.min.js"></script>
 
