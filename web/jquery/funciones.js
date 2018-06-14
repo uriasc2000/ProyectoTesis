@@ -1,81 +1,81 @@
-jQuery(document).ready(function() {
+jQuery(document).ready(function () {
 
-	var marker,map, myLatLng, mapCanvas,myCenter,mapOptions,latitud,longitud,velocidad;
+    var marker, map, myLatLng, mapCanvas, myCenter, mapOptions, latitud, longitud, velocidad;
 
-	cargarMapa();
+    cargarMapa();
 
-	setInterval(ejecutar,1000);
+    setInterval(ejecutar, 1000);
 
-	function cargarMapa()
-	{
+    function cargarMapa()
+    {
 
- 	  myCenter = new google.maps.LatLng(10.980540,-74.842178);
-  
-	  mapCanvas = document.getElementById("map");
-  
-	   mapOptions = {
-	    center: myCenter,
-	    zoom: 17
-	  	};
+        myCenter = new google.maps.LatLng(10.980540, -74.842178);
 
-	  map = new google.maps.Map(mapCanvas, mapOptions);
+        mapCanvas = document.getElementById("map");
 
-	  marker = new google.maps.Marker({position:myCenter});
+        mapOptions = {
+            center: myCenter,
+            zoom: 17
+        };
 
-	  marker.setIcon('iconos/male-2.png');
-	  
-	  marker.setMap(map);
-	  
-	  map.setCenter(marker.getPosition());
+        map = new google.maps.Map(mapCanvas, mapOptions);
 
-	}
+        marker = new google.maps.Marker({position: myCenter});
 
+        marker.setIcon('iconos/van.png');
 
-		function ejecutar()
-		{
-	
+        marker.setMap(map);
 
-		url="coordenadas.json";
+        map.setCenter(marker.getPosition());
 
-		id = 1;
-
-		$.getJSON(url,{"id":id},function(coordenadas)
-	        {                                        
-
-	              $.each(coordenadas, function(i,coordenada)
-	    
-	              {
-	                
-	                
-	                latitud = coordenadas.latitud;
-	                longitud = coordenadas.longitud;
-					velocidad = coordenadas.velocidad;
-
-	                	                  
-	  mapOptions = {
-	    center: myCenter,
-	    zoom: 15
-	  	};
-	
-
-		marker.setMap(null);
-
-		myCenter = new google.maps.LatLng(latitud,longitud);
-		marker = new google.maps.Marker({position:myCenter});
-		marker.setIcon('iconos/male-2.png');
-		marker.setMap(map);  
-		marker.setPosition(myCenter);
-		map.panTo(myCenter);
-	
-		document.getElementById('log').innerHTML += "<br>"+velocidad;
-		return false;
-	                
-
-    	});       //fin coordenadas                     
+    }
 
 
-			});	// fin getJson
-	
-	} //fin función
+    function ejecutar()
+    {
+
+
+        url = "coordenadas.json";
+
+        id = 1;
+
+        $.getJSON(url, {"id": id}, function (coordenadas)
+        {
+
+            $.each(coordenadas, function (i, coordenada)
+
+            {
+
+
+                latitud = coordenadas.latitud;
+                longitud = coordenadas.longitud;
+                velocidad = coordenadas.velocidad;
+
+
+                mapOptions = {
+                    center: myCenter,
+                    zoom: 15
+                };
+
+
+                marker.setMap(null);
+
+                myCenter = new google.maps.LatLng(latitud, longitud);
+                marker = new google.maps.Marker({position: myCenter});
+                marker.setIcon('iconos/van.png');
+                marker.setMap(map);
+                marker.setPosition(myCenter);
+                map.panTo(myCenter);
+
+                document.getElementById('logD').value = velocidad;
+                return false;
+
+
+            });       //fin coordenadas                     
+
+
+        });	// fin getJson
+
+    } //fin función
 
 });
