@@ -14,21 +14,16 @@ $json_string = json_encode($coordenadas);
 $file = 'coordenadas.json';
 file_put_contents($file, $json_string);
 //GUARDAR EN BASE DE DATOS LO OBTENIDO
-//CREAR CONEXION
-//CREDENCIALES BASE DE DATOS
-$HOST = "ec2-50-16-241-91.compute-1.amazonaws.com";
-$DB = "d9760bupnbe5kt";
-$USUARIO = "eubqinvrqabscc";
-$PASSWORD = "e04c3d34b6d0be5c97027021c77cdfd81c62c89a123f40adba4f26c3a049f392";
-$PORT = "5432";
+$link = mysql_connect('35.237.166.125', 'root', 'Admin123')or die('No se pudo conectar: ' . mysql_error());
+mysql_select_db('localizadordb') or die('No se pudo seleccionar la base de datos');
 
-$cadenaConexion = "host=$HOST port=$PORT dbname=$DB user=$USUARIO password=$PASSWORD";
+// Realizar una consulta MySQL
+$query = 'insert into localizador.entradas values($latitud,$longitud,$velocidad)';
+$result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
 
-$conexion = pg_connect($cadenaConexion) or die("ERROR DE CONEXION: ".pg_last_error());
+// Liberar resultados
+mysql_free_result($result);
 
-$query = "insert into localizador.entradas values($latitud,$longitud,$velocidad)";
-
-$resultado = pg_query($conexion,$query)or die("error en consulta SQL");
-
-pg_clientencoding($conexion);
+// Cerrar la conexión
+mysql_close($link);
 ?>
