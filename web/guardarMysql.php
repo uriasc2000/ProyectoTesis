@@ -14,7 +14,7 @@ $json_string = json_encode($coordenadas);
 $file = 'coordenadas.json';
 file_put_contents($file, $json_string);
 //GUARDAR EN BASE DE DATOS LO OBTENIDO
-$link = mysql_connect('35.237.166.125', 'root', 'Admin123')or die('No se pudo conectar: ' . mysql_error());
+$link = mysql_connect('https://35.237.166.125/', 'root', 'Admin123')or die('No se pudo conectar: ' . mysql_error());
 mysql_select_db('localizadordb') or die('No se pudo seleccionar la base de datos');
 
 // Realizar una consulta MySQL
