@@ -1,9 +1,4 @@
 <?php
-$ip = "http://soluciones5024.com";
-$output = shell_exec("ping $ip");
- 
-if (strpos($output, "recibidos = 0")) {
-    echo 'No Conectado';
-} else {
-    echo 'Conectado';
-}
+exec("ping 35.237.166.125",$output);
+print_r($output);
+?>
