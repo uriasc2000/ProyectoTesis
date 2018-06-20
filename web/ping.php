@@ -1,5 +1,5 @@
 <?php
-$ip = "http://www.forosdelweb.com";
+$ip = "http://soluciones5024.com";
 $output = shell_exec("ping $ip");
  
 if (strpos($output, "recibidos = 0")) {
