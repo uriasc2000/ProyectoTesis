@@ -18,16 +18,18 @@ $file = 'coordenadas.json';
 file_put_contents($file, $json_string);
 //GUARDAR EN BASE DE DATOS LO OBTENIDO
 
-$link = mysql_connect('35.237.166.125', 'root', 'Admin123+')or die('No se pudo conectar: ' . mysql_error());
-mysql_select_db('localizadordb') or die('No se pudo seleccionar la base de datos');
+$usuario = "root";
+$contrasena = "Admin123+";  // en mi caso tengo contraseña pero en casa caso introducidla aquí.
+$servidor = "35.237.166.125";
+$basededatos = "localizadordb";
+
+$conexion = mysqli_connect($servidor,$usuario,$contrasena)or die("No se pudo conectar:");
+$db = mysqli_select_db($conexion,$basededatos) or die("No se pudo seleccionar la base de datos");
 
 // Realizar una consulta MySQL
-$query = 'insert into localizador.entradas values($latitud,$longitud,$velocidad)';
-$result = mysql_query($query) or die('Consulta fallida: ' . mysql_error());
-
-// Liberar resultados
-mysql_free_result($result);
+$query = "insert into localizador.entradas values($latitud,$longitud,$velocidad)";
+$result = mysqli_query($conexion,$query) or die("Consulta fallida:");
 
 // Cerrar la conexión
-mysql_close($link);
+mysqli_close($conexion);
 ?>
