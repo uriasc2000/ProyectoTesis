@@ -27,7 +27,7 @@ $conexion = mysqli_connect($servidor,$usuario,$contrasena)or die("No se pudo con
 $db = mysqli_select_db($conexion,$basededatos) or die("No se pudo seleccionar la base de datos");
 
 // Realizar una consulta MySQL
-$query = "insert into localizador.entradas values($latitud,$longitud,$velocidad)";
+$query = "insert into entradas values($latitud,$longitud,$velocidad)";
 $result = mysqli_query($conexion,$query) or die("Consulta fallida:");
 
 // Cerrar la conexión
