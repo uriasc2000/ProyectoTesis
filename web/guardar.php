@@ -1,5 +1,8 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 $latitud = $_GET['lati']; //obtenemos la latitud por URL
 
 $longitud = $_GET['longi']; //obtenemos la longitud por URL
