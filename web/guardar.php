@@ -29,7 +29,7 @@ $db = mysqli_select_db($conexion,$basededatos) or die("No se pudo seleccionar la
 // Realizar una consulta MySQL
 $placa = "C-123XYZ";
 $id_viaje = -1;
-$query_c = "CALL ADD_VIAJE('C-123XYZ',@salida)";
+$query_c = "CALL ADD_VIAJE('$placa',@salida)";
 $query_r = "select @salida";
 $result = mysqli_query($conexion,$query_c) or die("Consulta fallida 1:" . mysqli_error($conexion) );
 //$result->free();
