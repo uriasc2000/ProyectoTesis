@@ -33,7 +33,7 @@ $query_c = "CALL ADD_VIAJE('$placa',@salida)";
 $query_r = "select @salida";
 $result = mysqli_query($conexion,$query_c) or die("Consulta fallida 1:" . mysqli_error($conexion) );
 //$result->free();
-mysqli_free_result($result);
+//mysqli_free_result($result);
 $result_id = mysqli_query($conexion,$query_r) or die("Consulta fallida 2:" . mysqli_error($conexion) );
 $respuesta = mysqli_fetch_array($result_id);
 $json_response = json_encode($respuesta);
