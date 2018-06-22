@@ -31,7 +31,7 @@ $placa = "C-123XYZ";
 $id_viaje = -1;
 $query_c = "CALL ADD_VIAJE($placa,@salida);";
 $query_r = "select @salida";
-$result = mysqli_query($conexion,$query_c) or die("Consulta fallida 1:" . mysqli_error($conexion) . $mysqli->errno($conexion));
+$result = mysqli_query($conexion,$query_c) or die("Consulta fallida 1:" . mysqli_error($conexion) );
 $result->close();
 $result_id = mysqli_query($conexion,$query_r) or die("Consulta fallida 2:" . mysqli_error($conexion) );
 $respuesta = mysqli_fetch_array($result_id);
