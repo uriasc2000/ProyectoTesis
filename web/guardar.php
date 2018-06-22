@@ -36,7 +36,7 @@ $result = mysqli_query($conexion,$query_c) or die("Consulta fallida 1:" . mysqli
 //mysqli_free_result($result);
 $result_id = mysqli_query($conexion,$query_r) or die("Consulta fallida 2:" . mysqli_error($conexion) );
 $respuesta = mysqli_fetch_array($result_id);
-$json_response = json_encode($respuesta[1]);
+$json_response = json_encode($respuesta['@salida']);
 echo($json_response);
 // Cerrar la conexión
 mysqli_close($conexion);
