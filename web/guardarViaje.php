@@ -3,19 +3,21 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-$latitud = $_GET['lati']; //obtenemos la latitud por URL
+//$latitud = $_GET['lati']; //obtenemos la latitud por URL
 
-$longitud = $_GET['longi']; //obtenemos la longitud por URL
+//$longitud = $_GET['longi']; //obtenemos la longitud por URL
 
-$velocidad = $_GET['veloci']; //obtenemos la longitud por URL
+//$velocidad = $_GET['veloci']; //obtenemos la longitud por URL
 
-$longitud = $longitud * 10; //multiplico la longitud por 10 
+$placa = $_GET['placabus']; //obtenemos la placa por URL
 
-$coordenadas = array('latitud' => $latitud, 'longitud' => $longitud, 'velocidad' => $velocidad); //Creamos el array
+//$longitud = $longitud * 10; //multiplico la longitud por 10 
+
+//$coordenadas = array('latitud' => $latitud, 'longitud' => $longitud, 'velocidad' => $velocidad); //Creamos el array
 //Creamos el JSON
-$json_string = json_encode($coordenadas);
-$file = 'coordenadas.json';
-file_put_contents($file, $json_string);
+//$json_string = json_encode($coordenadas);
+//$file = 'coordenadas.json';
+//file_put_contents($file, $json_string);
 //GUARDAR EN BASE DE DATOS LO OBTENIDO
 
 $usuario = "root";
@@ -27,7 +29,7 @@ $conexion = mysqli_connect($servidor,$usuario,$contrasena)or die("No se pudo con
 $db = mysqli_select_db($conexion,$basededatos) or die("No se pudo seleccionar la base de datos");
 
 // Realizar una consulta MySQL
-$placa = "C-123XYZ";
+//$placa = "C-123XYZ";
 $id_viaje = -1;
 $query_c = "CALL ADD_VIAJE('$placa',@salida)";
 $query_r = "select @salida";
