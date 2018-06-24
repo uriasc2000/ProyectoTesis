@@ -40,7 +40,8 @@ $result_id = mysqli_query($conexion,$query_r) or die("Consulta fallida 2:" . mys
 $respuesta = mysqli_fetch_array($result_id);
 $json_response = json_encode($respuesta);
 //echo("<!DOCTYPE html><html><body>" . $json_response . "</body></html>");
-echo("<!DOCTYPE html><html><body>Hola</body></html>");
+echo($json_response);
+//echo("<!DOCTYPE html><html><body>Hola</body></html>");
 // Cerrar la conexión
 mysqli_close($conexion);
 //return $json_response;
