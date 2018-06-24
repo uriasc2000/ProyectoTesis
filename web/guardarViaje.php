@@ -9,7 +9,7 @@ ini_set('display_errors', '1');
 
 //$velocidad = $_GET['veloci']; //obtenemos la longitud por URL
 
-$placa = $_GET['placabus']; //obtenemos la placa por URL
+$placa = $_POST['placabus']; //obtenemos la placa por URL
 
 //$longitud = $longitud * 10; //multiplico la longitud por 10 
 
