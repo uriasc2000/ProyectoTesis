@@ -40,7 +40,7 @@ if($inicioViaje==1){//Inicio del viaje
     $respuesta = mysqli_fetch_array($result);
     //$json = json_encode($respuesta);
     $viaje_actual = $respuesta["viaje_actual"];
-    echo $viaje_actual;
+    //echo $viaje_actual;
     $queryi = "insert into punto (latitud, longitud,velocidad,id_viaje) VALUES ($latitud,$longitud,$velocidad,$viaje_actual)";
     $resulti = mysqli_query($conexion,$queryi) or die("Consulta fallida 4:" . mysqli_error($conexion));
     mysqli_close($conexion);
