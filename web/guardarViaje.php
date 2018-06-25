@@ -34,7 +34,8 @@ if($inicioViaje==1){//Inicio del viaje
     $query = "select viaje_actual from ACTUALES where placa = '$placa'";
     $result = mysqli_query($conexion,$query) or die("Consulta fallida 3:" . mysqli_error($conexion) );
     $respuesta = mysqli_fetch_array($result);
-    echo $respuesta["valor_actual"];
+    $json = json_encode($respuesta);
+    echo $json;
 }
 
 ?>
