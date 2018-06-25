@@ -3,7 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-$placa = $_POST['placabus']; //obtenemos la placa por URL
+$placa = $_GET['placabus']; //obtenemos la placa por URL
 //GUARDAR EN BASE DE DATOS LO OBTENIDO
 $usuario = "root";
 $contrasena = "Admin123+";  // en mi caso tengo contraseña pero en casa caso introducidla aquí.
