@@ -31,7 +31,7 @@ if($inicioViaje==1){//Inicio del viaje
     $conexion = mysqli_connect($servidor,$usuario,$contrasena)or die("No se pudo conectar:");
     $db = mysqli_select_db($conexion,$basededatos) or die("No se pudo seleccionar la base de datos");
     // Realizar una consulta MySQL
-    $query = "SELECT viaje_actual FROM ACTUALES WHERE placa = $placa";
+    $query = "SELECT viaje_actual FROM ACTUALES WHERE placa = '$placa'";
     $result = mysqli_query($conexion,$query) or die("Consulta fallida 1:" . mysqli_error($conexion) );
     $respuesta = mysqli_fetch_array($result);
     echo $respuesta;
