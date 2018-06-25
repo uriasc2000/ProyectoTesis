@@ -1,6 +1,9 @@
 <?php
 require("db_info.php");
 
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 $idviaje = $_GET['id_viaje']; //Averiguar si inicia el viaje
 
 // Start XML file, create parent node
