@@ -30,7 +30,7 @@ if (!$db_selected) {
 
 // Select all the rows in the markers table
 $query = "SELECT id,concat(VELOCIDAD,' Km/h') AS name,'' AS address, latitud,longitud, 'B' AS tipo FROM PUNTO WHERE ID_VIAJE = $idviaje";
-$result = mysqli_query($query);
+$result = mysqli_query($query,$connection);
 if (!$result) {
   die('Invalid query: ' . mysqli_error());
 }
