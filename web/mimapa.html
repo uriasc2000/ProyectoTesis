@@ -53,8 +53,6 @@
               parseFloat(markerElem.getAttribute('longitud'))
             );
 
-            idt+=1;
-
             var infowincontent = document.createElement('div');
             var strong = document.createElement('strong');
             strong.textContent = name
@@ -68,8 +66,11 @@
             var marker = new google.maps.Marker({
               map: map,
               position: point,
-              label: icon.label
+              label: idt
             });
+
+            idt+=1;
+
             marker.addListener('click', function() {
               infoWindow.setContent(infowincontent);
               infoWindow.open(map, marker);
