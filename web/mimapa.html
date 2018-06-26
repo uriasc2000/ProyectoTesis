@@ -41,6 +41,7 @@
         //downloadUrl('https://storage.googleapis.com/mapsdevsite/json/mapmarkers2.xml', function(data) {
         obtenerPuntos("obtenerpuntosviaje.php?id_viaje=",49,function(data) {
           var xml = data.responseXML;
+          alert(data);
           var markers = xml.documentElement.getElementsByTagName('marker');
           Array.prototype.forEach.call(markers, function(markerElem) {
             var id = markerElem.getAttribute('id');
