@@ -31,11 +31,12 @@
       };
 
         function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: new google.maps.LatLng(14.563, -90.7398),
-          zoom: 15,
-          marker: new google.maps.Marker({position:myCenter})
-        }
+          var myCenter = new google.maps.LatLng(14.563, -90.7398);
+          var mapCanvas = document.getElementById("map");
+          var mapOptions = {center: myCenter, zoom: 15};
+          var map = new google.maps.Map(mapCanvas, mapOptions);
+          var marker = new google.maps.Marker({position:myCenter});
+          marker.setMap(map);
       );
         var infoWindow = new google.maps.InfoWindow;
 
