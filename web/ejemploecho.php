@@ -20,7 +20,7 @@ if (!$connection) {
 // Set the active MySQL database
 $db_selected = mysqli_select_db($basededatos, $connection);
 if (!$db_selected) {
-  die ('Can\'t use db : ' . mysqli_error());
+  die ('Can\'t use db : ' . mysqli_error($connection));
 }
 
 // Select all the rows in the markers table
