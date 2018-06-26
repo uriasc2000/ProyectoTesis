@@ -1,6 +1,8 @@
 <?php
 require("db_info.php");
 
+$idviaje = $_GET['id_viaje']; //Averiguar si inicia el viaje
+
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
@@ -27,7 +29,8 @@ if (!$db_selected) {
 }
 
 // Select all the rows in the markers table
-$query = "select * from markers where 1";
+//$query = "select * from markers where 1";
+$query = "select id,concat(VELOCIDAD,' Km/h') as name,'' as address, latitud,longitud, 'B' as tipo from PUNTO where ID_VIAJE = $idviaje";
 $result = mysqli_query($connection,$query);
 //if (!$result) {
   //die('Invalid query: ' . mysqli_error());
@@ -46,9 +49,9 @@ while ($row = @mysqli_fetch_assoc($result)){
   echo 'id="' . $row['id'] . '" ';
   echo 'name="' . parseToXML($row['name']) . '" ';
   echo 'address="' . parseToXML($row['address']) . '" ';
-  echo 'lat="' . $row['lat'] . '" ';
-  echo 'lng="' . $row['lng'] . '" ';
-  echo 'type="' . $row['type'] . '" ';
+  echo 'lat="' . $row['latitud'] . '" ';
+  echo 'lng="' . $row['longitud'] . '" ';
+  echo 'type="' . $row['tipo'] . '" ';
   echo '/>';
   $ind = $ind + 1;
 }
