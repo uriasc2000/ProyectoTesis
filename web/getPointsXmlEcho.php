@@ -23,7 +23,7 @@ if (!$connection) {
 }
 
 // Set the active MySQL database
-$db_selected = mysqli_select_db($basededatos, $connection);
+$db_selected = mysqli_select_db($connection,$basededatos);
 if (!$db_selected) {
   die ('Can\'t use db : ' . mysqli_error());
 }
