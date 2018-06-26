@@ -12,7 +12,7 @@ jQuery(document).ready(function () {
         mapCanvas = document.getElementById("map");
         mapOptions = {
             center: myCenter,
-            zoom: 17
+            zoom: 15
         };
         map = new google.maps.Map(mapCanvas, mapOptions);
         marker = new google.maps.Marker({position: myCenter});
@@ -20,7 +20,6 @@ jQuery(document).ready(function () {
         marker.setMap(map);
         map.setCenter(marker.getPosition());
     }
-
 
     function ejecutar()
     {
