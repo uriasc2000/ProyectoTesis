@@ -49,9 +49,9 @@ while ($row = @mysqli_fetch_assoc($result)){
   echo 'id="' . $row['id'] . '" ';
   echo 'name="' . parseToXML($row['name']) . '" ';
   echo 'address="' . parseToXML($row['address']) . '" ';
-  echo 'lat="' . $row['latitud'] . '" ';
-  echo 'lng="' . $row['longitud'] . '" ';
-  echo 'type="' . $row['tipo'] . '" ';
+  echo 'latitud="' . $row['latitud'] . '" ';
+  echo 'longitud="' . $row['longitud'] . '" ';
+  echo 'tipo="' . $row['tipo'] . '" ';
   echo '/>';
   $ind = $ind + 1;
 }
