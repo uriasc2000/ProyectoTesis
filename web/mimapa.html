@@ -41,8 +41,8 @@
         //downloadUrl('https://storage.googleapis.com/mapsdevsite/json/mapmarkers2.xml', function(data) {
         obtenerPuntos("obtenerpuntosviaje.php?id_viaje=",49,function(data) {
           var xml = data.responseXML;
-          alert(data);
           var markers = xml.documentElement.getElementsByTagName('marker');
+          var idt = 1;
           Array.prototype.forEach.call(markers, function(markerElem) {
             var id = markerElem.getAttribute('id');
             var name = markerElem.getAttribute('name');
@@ -53,6 +53,8 @@
               parseFloat(markerElem.getAttribute('longitud'))
             );
 
+            idt+=1;
+
             var infowincontent = document.createElement('div');
             var strong = document.createElement('strong');
             strong.textContent = name
@@ -62,7 +64,7 @@
             var text = document.createElement('text');
             text.textContent = address
             infowincontent.appendChild(text);
-            var icon = customLabel[type] || {};
+            var icon = customLabel[type] || {idt};
             var marker = new google.maps.Marker({
               map: map,
               position: point,
