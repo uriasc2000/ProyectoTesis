@@ -23,7 +23,6 @@ $result = mysqli_query($connection,$query)or die("Consulta fallida 4:" . mysqli_
 
 $arreglo = mysqli_fetch_array($result);
 
-echo header("Content-type: text/json");
 echo json_encode($arreglo);
 
 mysqli_close($connection);
