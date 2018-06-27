@@ -21,7 +21,7 @@ if (!$db_selected) {
 
 //Crear query para obtener datos
 $query = "select * from VIAJE where placa = '$placa' order by fecha desc";
-$result = mysqli_query($connection,$query)or die("Consulta fallida 4:" . mysqli_error($conexion));
+$result = mysqli_query($connection,$query)or die("Consulta fallida 4:" . mysqli_error($connection));
 
 header("Content-type: text/xml");
 
