@@ -37,10 +37,10 @@ $ind=0;
 while ($row = @mysqli_fetch_assoc($result)){
   // Add to XML document node
   echo '<viaje ';
-  echo 'id="' . $row['id'] . '" ';
-  echo 'fecha="' . $row['fecha'] . '" ';
-  echo 'calificacion="' . $row['calificacion'] . '" ';
-  echo 'placa="' . $row['placa'] . '" ';
+  echo 'id="' . $row['ID'] . '" ';
+  echo 'fecha="' . $row['FECHA'] . '" ';
+  echo 'calificacion="' . $row['CALIFICACION'] . '" ';
+  echo 'placa="' . $row['PLACA'] . '" ';
   echo '/>';
   $ind = $ind + 1;
 }
