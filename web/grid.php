@@ -2,6 +2,8 @@
 
 require("db_info.php");
 
+$placa = $_GET['placa']; //Averiguar si inicia el viaje
+
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
@@ -18,23 +20,29 @@ if (!$db_selected) {
 }
 
 //Crear query para obtener datos
-$query = "select * from VIAJE where placa = 'C-123XYZ' order by fecha desc";
+$query = "select * from VIAJE where placa = '$placa' order by fecha desc";
 $result = mysqli_query($connection,$query)or die("Consulta fallida 4:" . mysqli_error($conexion));
 
-$arreglo = mysqli_fetch_array($result);
+header("Content-type: text/xml");
 
-echo json_encode($arreglo);
+// Start XML file, echo parent node
+echo "<?xml version='1.0' ?>";
+echo '<viajes>';
+$ind=0;
+// Iterate through the rows, printing XML nodes for each
+while ($row = @mysqli_fetch_assoc($result)){
+  // Add to XML document node
+  echo '<viaje ';
+  echo 'id="' . $row['id'] . '" ';
+  echo 'fecha="' . $row['fecha'] . '" ';
+  echo 'calificacion="' . $row['calificacion'] . '" ';
+  echo 'placa="' . $row['placa'] . '" ';
+  echo '/>';
+  $ind = $ind + 1;
+}
+
+// End XML file
+echo '</viajes>';
 
 mysqli_close($connection);
 ?>
-
-<!DOCTYPE html >
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <title>Viajes</title>
-  </head>
-  <body>
-
-</body>
-</html>

@@ -32,9 +32,9 @@ if (!$db_selected) {
 //$query = "select * from markers where 1";
 $query = "select id,concat(VELOCIDAD,' Km/h') as name,'' as address, latitud,longitud, 'B' as tipo from PUNTO where ID_VIAJE = $idviaje and velocidad >0";
 $result = mysqli_query($connection,$query);
-//if (!$result) {
-  //die('Invalid query: ' . mysqli_error());
-//}
+if (!$result) {
+  die('Invalid query: ' . mysqli_error());
+}
 
 header("Content-type: text/xml");
 
