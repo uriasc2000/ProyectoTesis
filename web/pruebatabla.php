@@ -8,8 +8,9 @@
       
       $(function(){
         $("#consultar").click(function(){
-          $("#receptor").text("consultando");
+          $("#receptor").text("consultando...");
           $.get("obtenerviajes.php",{placa:$("#entrada").val()},function(data){
+            var xml = data.responseXML;
             var xmlString = (new XMLSerializer()).serializeToString(data);
             $("#receptor").html(xmlString);
           },"xml");
