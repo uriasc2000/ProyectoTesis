@@ -10,8 +10,8 @@
         $("#consultar").click(function(){
           $("#receptor").text("consultando...");
           $.get("prueba.php",{placa:$("#entrada").val()},function(data){
-
-            $("#receptor").html(xmlString);
+            $("#receptor").html("");
+            $("#receptor").append(data);
           },"xml");
       });
       });
