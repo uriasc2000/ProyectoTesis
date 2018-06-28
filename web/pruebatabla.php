@@ -9,17 +9,20 @@
       $(function(){
         $("#consultar").click(function(){
           $("#receptor").text("consultando");
-          $.get("prueba.php",{placa:"C-123XYZ"},respuesta,'json')
+          $.get("prueba.php",{placa:$("#entrada").val()},respuesta,'json');
       });
       });
 
       function respuesta(arg) {
+        alert("Hola");
         $("#receptor").html(arg.toSource());
+
       }
 
     </script>
   </head>
   <body>
+    <input type="input" id="entrada" size="25">
     <input type="button" id="consultar" value="consultar">
     <div id="receptor"></div>
   </body>
