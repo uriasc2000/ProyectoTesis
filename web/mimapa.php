@@ -23,7 +23,7 @@
       <form> 
         <?php
           $viaje = $_GET['viaje'];
-          echo "<input type=\"hidden\" value =\".$viaje.\" name =\"viaje\" id=\"viaje\"/>";
+          echo "<input type=\"hidden\" value =\"$viaje\" name =\"viaje\" id=\"viaje\"/>";
         ?>                                
       </form>
     </div>
