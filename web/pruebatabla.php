@@ -9,17 +9,12 @@
       $(function(){
         $("#consultar").click(function(){
           $("#receptor").text("consultando");
-          $.get("prueba.php",{placa:$("#entrada").val()},function(data){
-            $("#receptor").html(data.ID);
-          },"json");
+          $.get("obtenerviajes.php",{placa:$("#entrada").val()},function(data){
+            var xmlString = (new XMLSerializer()).serializeToString(data);
+            $("#receptor").html(xmlString);
+          },"xml");
       });
       });
-
-      function respuesta(arg) {
-        alert("Hola");
-        $("#receptor").html(arg.toSource());
-
-      }
 
     </script>
   </head>
