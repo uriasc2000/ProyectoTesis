@@ -8,11 +8,11 @@
       
       $(function(){
         $("#consultar").click(function(){
-          $("#receptor").text("consultando...");
+          $("#receptor").text("consultando.");
           $.get("prueba.php",{placa:$("#entrada").val()},function(data){
             $("#receptor").html("");
             $("#receptor").append(data);
-          },"xml");
+          },"json");
       });
       });
 
