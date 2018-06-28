@@ -19,11 +19,15 @@
   </head>
   <body>
     <div id="map"></div>
-    <?php
-      $viaje = $_GET['viaje'];
-      echo "<div id = \"viaje\" value=\"$viaje\"></div>";
-    ?>
+    <div id="ingreso"></div>
+    
     <script>
+
+      <?php
+      $viaje = $_GET['viaje'];
+      echo "<input id = \"viaje\" value=\"$viaje\"></div>";
+    ?>
+    
       var customLabel = {
         restaurant: {
           label: 'R'
