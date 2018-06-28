@@ -9,9 +9,8 @@
       $(function(){
         $("#consultar").click(function(){
           $("#receptor").text("consultando...");
-          $.get("obtenerviajes.php",{placa:$("#entrada").val()},function(data){
-            var xml = data.responseXML;
-            var xmlString = (new XMLSerializer()).serializeToString(data);
+          $.get("prueba.php",{placa:$("#entrada").val()},function(data){
+
             $("#receptor").html(xmlString);
           },"xml");
       });

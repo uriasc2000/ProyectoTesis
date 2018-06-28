@@ -21,7 +21,21 @@ if (!$db_selected) {
 $query = "select * from VIAJE where placa = '$placa' order by fecha desc";
 $result = mysqli_query($connection,$query)or die("Consulta fallida 4:" . mysqli_error($connection));
 $respuesta = mysqli_fetch_array($result);
+
+$tabla = "<table><tr><th>ID</th><th>FECHA</th><th>CALIFICACION</th><th>PLACA</th></tr>";
+
+foreach($result as $i){
+    $tabla .= "<tr>";
+    $tabla .= "<td>".$i['ID']."</td>";
+    $tabla .= "<td>".$i['FECHA']."</td>";
+    $tabla .= "<td>".$i['CALIFICACION']."</td>";
+    $tabla .= "<td>".$i['PLACA']."</td>";
+    $tabla .= "</tr>";
+}
+
+$tabla .= "</table>";
+
 header("Content-type: text/json");
-echo json_encode($respuesta);
+echo json_encode($tabla);
 mysqli_close($connection);
 ?>
