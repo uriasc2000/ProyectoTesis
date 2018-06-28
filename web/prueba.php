@@ -21,6 +21,7 @@ if (!$db_selected) {
 $query = "select * from VIAJE where placa = '$placa' order by fecha desc";
 $result = mysqli_query($connection,$query)or die("Consulta fallida 4:" . mysqli_error($connection));
 $respuesta = mysqli_fetch_array($result);
+header("Content-type: text/json");
 echo json_encode($respuesta);
 mysqli_close($connection);
 ?>
