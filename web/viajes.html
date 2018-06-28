@@ -9,12 +9,7 @@
       $(function(){
         $("#consultar").click(function(){
           $("#receptor").text("consultando");
-          $.ajax({
-            type:"GET",
-            url:"obtenerviajes.php",
-            data:{placa:'C-123XYZ'},
-            success:respuesta(data)
-          });
+          $.get("obtenerviajes.php",{placa:"C-123XYZ"},respuesta,'xml');
       });
       });
 
