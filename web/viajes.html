@@ -3,45 +3,22 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <title>Viaje</title>
-  </head>
-  <body>
-    <script>
+    <script type="text/javascript" src="jquery/jquery.min.js"></script>
+    <script type="text/javascript">
+      
+      $(function(){$("#consultar").click(function(){
+        $("#consultar").click
+      });
+      });
 
-
-      function obtenerViajes(url, placa, callback) {
-        var request = window.ActiveXObject ? new ActiveXObject('Microsoft.XMLHTTP') : new XMLHttpRequest;
-        request.onreadystatechange = function() {
-          if (request.readyState == 4) {
-            request.onreadystatechange = doNothing;
-            callback(request, request.status);
-          }
-        };
-        request.open('GET', url+placa, true);
-        request.send(null);
-      }
-
-      function consultar(){
-        alert("hola");
+      function respuesta(arg) {
+        $("#receptor").html(arg);
       }
 
     </script>
-    <div>
-        <form name="login" method="post" target="resultado">
-            <table border="0">
-              <tr><td>
-                <table>
-                  <tr>
-                    <td align="left">Placa:</td>
-                    <td align="left"><input type="text" id="" size="25"></td>
-                    <td><input type="submit" value="consultar"></td>
-                  </tr>
-                </table>
-              </td></tr>
-            </table>
-        </form>
-    </div>
-    <div>
-
-    </div>
+  </head>
+  <body>
+    <input type="button" id="consultar" value="consultar">
+    <div id="receptor"></div>
   </body>
 </html>
