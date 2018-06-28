@@ -44,6 +44,6 @@ while ($row = @mysqli_fetch_assoc($result)){
 
 // End XML file
 echo '</viajes>';*/
-echo $respuesta;
+echo json_encode($respuesta);
 mysqli_close($connection);
 ?>
