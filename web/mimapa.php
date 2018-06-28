@@ -19,6 +19,10 @@
   </head>
   <body>
     <div id="map"></div>
+    <?php
+      $viaje = $_GET['viaje'];
+      echo "<div id = \"viaje\" value=\"$viaje\"></div>";
+    ?>
     <script>
       var customLabel = {
         restaurant: {
@@ -29,16 +33,15 @@
         }
       };
 
-      function initMap(idviaje) {
+      function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: new google.maps.LatLng(14.563, -90.7398),
           zoom: 15
         });
       
+        var idviaje = document.getElementById('viaje').value;
         var infoWindow = new google.maps.InfoWindow;
 
-        // Change this depending on the name of your PHP or XML file
-        //downloadUrl('https://storage.googleapis.com/mapsdevsite/json/mapmarkers2.xml', function(data) {
         obtenerPuntos("obtenerpuntosviaje.php?id_viaje=",idviaje,function(data) {
           var xml = data.responseXML;
           var markers = xml.documentElement.getElementsByTagName('marker');
@@ -117,11 +120,8 @@
 
       function doNothing() {}
     </script>
-    <?php
-    $viaje = $_GET['viaje'];
-    echo "<script async defer";
-    echo "src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyBTOZpHPXJ1Z6m_WYQ6YRtLoHznv5vOvqE&callback=initMap($viaje)\">";
-    echo "</script>";
-    ?>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTOZpHPXJ1Z6m_WYQ6YRtLoHznv5vOvqE&callback=initMap">
+    </script>
   </body>
 </html>
