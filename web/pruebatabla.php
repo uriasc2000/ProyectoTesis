@@ -9,7 +9,9 @@
       $(function(){
         $("#consultar").click(function(){
           $("#receptor").text("consultando");
-          $.get("prueba.php",{placa:$("#entrada").val()},respuesta,'json');
+          $.get("prueba.php",{placa:$("#entrada").val()},function(data){
+            $("#receptor").html("llega");
+          },"json");
       });
       });
 
