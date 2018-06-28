@@ -14,7 +14,7 @@
       });
 
       function respuesta(arg) {
-        $("#receptor").html(arg);
+        $("#receptor").html(arg.toSource());
       }
 
     </script>
