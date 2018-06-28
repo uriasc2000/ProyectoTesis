@@ -6,8 +6,15 @@
     <script type="text/javascript" src="jquery/jquery.min.js"></script>
     <script type="text/javascript">
       
-      $(function(){$("#consultar").click(function(){
-        $("#consultar").click
+      $(function(){
+        $("#consultar").click(function(){
+          $("#receptor").text("consultando");
+          $.ajax({
+            type:"GET",
+            url:"obtenerviajes.php",
+            data:{placa:'C-123XYZ'},
+            success:respuesta(data)
+          });
       });
       });
 
