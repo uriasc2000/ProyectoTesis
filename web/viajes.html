@@ -9,12 +9,27 @@
       $(function(){
         $("#consultar").click(function(){
           $("#receptor").text("consultando");
-          $.get("obtenerviajes.php",{placa:"C-123XYZ"},respuesta,'json');
+          obtenerViajes("obtenerviajes.php","C-123XYZ",function(data){
+            var xml = data.responseXML;
+            respuesta(xml);
+          });
       });
       });
 
       function respuesta(arg) {
-        $("#receptor").html(arg.toSource());
+        $("#receptor").html(arg);
+      }
+
+      function obtenerViajes(url, placa, callback) {
+        var request = window.ActiveXObject ? new ActiveXObject('Microsoft.XMLHTTP') : new XMLHttpRequest;
+        request.onreadystatechange = function() {
+          if (request.readyState == 4) {
+            request.onreadystatechange = doNothing;
+            callback(request, request.status);
+          }
+        };
+        request.open('GET', url+placa, true);
+        request.send(null);
       }
 
     </script>
