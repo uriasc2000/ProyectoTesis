@@ -60,22 +60,23 @@ $url = "prueba.php";
 
 $tabla .= "<br>";
 
-/*if ($total_paginas > 1) {
+if ($total_paginas > 1) {
   if ($pagina != 1)
-     $tabla .= "<input type=\"button\" id=\"consultar_page\" value=\"".$pagina."\">";
+     $tabla .= "<input type=\"button\" id=\"consultar_page\" data=\"".$pagina."\" value=\"".$pagina."\">";
      for ($i=1;$i<=$total_paginas;$i++) {
         if ($pagina == $i)
            //si muestro el índice de la página actual, no coloco enlace
-           $tabla .= "<input type=\"button\" id=\"consultar_page\" value=\"".$pagina."\">";
+           $tabla .= "<input type=\"button\" id=\"consultar_page\" data=\"".$pagina."\" value=\"".$pagina."\">";
         else
            //si el índice no corresponde con la página mostrada actualmente,
            //coloco el enlace para ir a esa página
-           $tabla .= "<input type=\"button\" id=\"consultar_page\" value=\"".$i."\">";
+           $tabla .= "<input type=\"button\" id=\"consultar_page\" data=\"".$pagina."\" value=\"".$i."\">";
      }
      if ($pagina != $total_paginas)
-     $tabla .= "<input type=\"button\" id=\"consultar_page\" value=\"".$i."\">";
-}*/
+     $tabla .= "<input type=\"button\" id=\"consultar_page\" data=\"".$pagina."\" value=\"".$i."\">";
+}
 
+/*
 if ($total_paginas > 1) {
   $tabla .= '<div class="pagination">';
   if ($pagina != 1){
@@ -93,7 +94,7 @@ if ($total_paginas > 1) {
       $tabla .= '<a class="paginate" data="'.($pagina+1).'">Siguiente</a>';
       $tabla .= '</div>';
   }
-}
+}*/
 
 header("Content-type: text/json");
 echo json_encode($tabla);
