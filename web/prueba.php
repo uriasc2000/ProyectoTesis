@@ -1,6 +1,18 @@
 <?php
 require("db_info.php");
+
+$TAMANO_PAGINA = 10;
+
 $placa = $_GET['placa']; //Averiguar si inicia el viaje
+$pagina = $_GET['pagina']; //Pagina a mostrar
+
+if (!$pagina) {
+   $inicio = 0;
+   $pagina = 1;
+}
+else {
+   $inicio = ($pagina - 1) * $TAMANO_PAGINA;
+}
 
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
@@ -18,13 +30,18 @@ if (!$db_selected) {
 }
 
 //Crear query para obtener datos
-$query = "select * from VIAJE where placa = '$placa' order by fecha desc";
-$result = mysqli_query($connection,$query)or die("Consulta fallida 4:" . mysqli_error($connection));
-$respuesta = mysqli_fetch_array($result);
+$query_all = "select * from VIAJE where placa = '$placa'";
+$result_all = mysqli_query($connection,$query_all)or die("Consulta fallida 4:" . mysqli_error($connection));
+$num_total_registros = mysqli_num_rows($result_all);
+$total_paginas = ceil($num_total_registros / $TAMANO_PAGINA);
+
+$query_page = "select * from VIAJE where placa = '$placa' order by fecha,id desc LIMIT $inicio,$TAMANO_PAGINA";
+$result_page = mysqli_query($connection,$query_page)or die("Consulta fallida 4:" . mysqli_error($connection));
+//$respuesta = mysqli_fetch_array($result_page);
 
 $tabla = "<table><tr><th>ID</th><th>FECHA</th><th>CALIFICACION</th><th>PLACA</th></tr>";
 
-foreach($result as $i){
+foreach($result_page as $i){
     $tabla .= "<tr>";
     $tabla .= "<td>".$i['ID']."</td>";
     $tabla .= "<td>".$i['FECHA']."</td>";

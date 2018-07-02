@@ -2,7 +2,20 @@
 
 require("db_info.php");
 
+$TAMANO_PAGINA = 10;
+
 $placa = $_GET['placa']; //Averiguar si inicia el viaje
+$pagina = $_GET['pagina']; //Pagina a mostrar
+
+if (!$pagina) {
+   $inicio = 0;
+   $pagina = 1;
+}
+else {
+   $inicio = ($pagina - 1) * $TAMANO_PAGINA;
+}
+
+
 
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
@@ -20,8 +33,13 @@ if (!$db_selected) {
 }
 
 //Crear query para obtener datos
-$query = "select * from VIAJE where placa = '$placa' order by fecha desc";
-$result = mysqli_query($connection,$query)or die("Consulta fallida 4:" . mysqli_error($connection));
+$query_all = "select * from VIAJE where placa = '$placa'";
+$result_all = mysqli_query($connection,$query_all)or die("Consulta fallida 4:" . mysqli_error($connection));
+$num_total_registros = mysqli_num_rows($rs_noticias);
+$total_paginas = ceil($num_total_registros / $TAMANO_PAGINA);
+
+$query_page = "select * from VIAJE where placa = '$placa' order by fecha,id desc LIMIT $inicio,$TAMANO_PAGINA";
+$result_page = mysqli_query($connection,$query_page)or die("Consulta fallida 4:" . mysqli_error($connection));
 
 header("Content-type: text/xml");
 
@@ -30,7 +48,7 @@ echo "<?xml version='1.0' ?>";
 echo '<viajes>';
 $ind=0;
 // Iterate through the rows, printing XML nodes for each
-while ($row = @mysqli_fetch_assoc($result)){
+while ($row = @mysqli_fetch_assoc($result_page)){
   // Add to XML document node
   echo '<viaje ';
   echo 'id="' . $row['ID'] . '" ';
