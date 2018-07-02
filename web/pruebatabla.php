@@ -76,7 +76,7 @@ if ($total_paginas > 1) {
      $tabla .= "<input type=\"button\" id=\"consultar_page\" value=\"".$i."\">";
 }
 
-header("Content-type: text/json");
+//header("Content-type: text/json");
 echo json_encode($tabla);
 mysqli_close($connection);
 ?>
