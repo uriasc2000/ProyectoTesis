@@ -66,7 +66,7 @@ if ($total_paginas > 1) {
      for ($i=1;$i<=$total_paginas;$i++) {
         if ($pagina == $i)
            //si muestro el índice de la página actual, no coloco enlace
-           $tabla .= $pagina;
+           $tabla .= "<input type=\"button\" id=\"consultar_page\" value=\"".$pagina."\">";
         else
            //si el índice no corresponde con la página mostrada actualmente,
            //coloco el enlace para ir a esa página

@@ -22,6 +22,10 @@
       });
       });
 
+      function sayHello(persona)(
+        alert('Hola '+$("#test").val());
+      )
+
     </script>
   </head>
   <body>
