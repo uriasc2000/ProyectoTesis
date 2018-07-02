@@ -73,7 +73,7 @@ if ($total_paginas > 1) {
            $tabla .= "<input type=\"button\" id=\"consultar_page\" value=\"".$pagina."\">";
      }
      if ($pagina != $total_paginas)
-     $tabla .= $tabla .= "<input type=\"button\" id=\"consultar_page\" value=\"".$pagina."\">";
+     $tabla .= "<input type=\"button\" id=\"consultar_page\" value=\"".$pagina."\">";
 }
 
 header("Content-type: text/json");
