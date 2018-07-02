@@ -56,6 +56,24 @@ foreach($result_page as $i){
 
 $tabla .= "</table>";
 
+$url = "prueba.php";
+
+if ($total_paginas > 1) {
+  if ($pagina != 1)
+     echo "<a href=\"".$url."?placa='".$placa."'&pagina=".($pagina-1)."\"><=</a>";
+     for ($i=1;$i<=$total_paginas;$i++) {
+        if ($pagina == $i)
+           //si muestro el índice de la página actual, no coloco enlace
+           echo $pagina;
+        else
+           //si el índice no corresponde con la página mostrada actualmente,
+           //coloco el enlace para ir a esa página
+           echo "<a href=\"".$url."?placa='".$placa."'&pagina=".$i."\">".$i."</a>";
+     }
+     if ($pagina != $total_paginas)
+        echo "<a href=\"".$url."?pagina=".($pagina+1)."\">=></a>";
+}
+
 header("Content-type: text/json");
 echo json_encode($tabla);
 mysqli_close($connection);
