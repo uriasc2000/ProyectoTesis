@@ -77,25 +77,24 @@ $tabla .= "<br>";
 }*/
 
 if ($total_paginas > 1) {
-  echo '<div class="pagination">';
-  echo '<ul>';
+  $tabla .= '<div class="pagination">';
+  $tabla .= '<ul>';
   if ($pagina != 1)
-    echo '<li><a class="paginate" data="'.($pagina-1).'">Anterior</a></li>';
+  $tabla .= '<li><a class="paginate" data="'.($pagina-1).'">Anterior</a></li>';
     for ($i=1;$i<=$total_paginas;$i++) {
       if ($pagina == $i)
         //si muestro el índice de la página actual, no coloco enlace
-        echo '<li><a class="paginate">'.$i.'</a></li>';
+        $tabla .= '<li><a class="paginate">'.$i.'</a></li>';
       else
         //si el índice no corresponde con la página mostrada actualmente,
         //coloco el enlace para ir a esa página
-        echo '<li><a class="paginate" data="'.$i.'">'.$i.'</a></li>';
+        $tabla .= '<li><a class="paginate" data="'.$i.'">'.$i.'</a></li>';
       }
       if ($pagina != $total_paginas)
-          echo '<li><a class="paginate" data="'.($pagina+1).'">Siguiente</a></li>';
-      echo '</ul>';
-      echo '</div>';
+      $tabla .= '<li><a class="paginate" data="'.($pagina+1).'">Siguiente</a></li>';
+      $tabla .= '</ul>';
+      $tabla .= '</div>';
 }
-
 
 header("Content-type: text/json");
 echo json_encode($tabla);
