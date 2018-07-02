@@ -16,22 +16,11 @@
       });
       });
 
-      $(function(){
-        $("#test").click(function(){
-          alert('Hola '+$("#test").val());
-      });
-      });
-
-      function sayHello(persona)(
-        alert('Hola '+$("#test").val());
-      )
-
     </script>
   </head>
   <body>
     <input type="input" id="entrada" size="25">
     <input type="button" id="consultar" value="consultar">
-    <input type="button" id="test" value="Marvin">
     <div id="receptor"></div>
     <div id="map"></div>
   </body>
