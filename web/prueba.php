@@ -37,7 +37,6 @@ $total_paginas = ceil($num_total_registros / $TAMANO_PAGINA);
 
 $query_page = "select * from VIAJE where placa = '$placa' order by fecha,id desc LIMIT $inicio,$TAMANO_PAGINA";
 $result_page = mysqli_query($connection,$query_page)or die("Consulta fallida 4:" . mysqli_error($connection));
-//$respuesta = mysqli_fetch_array($result_page);
 
 $tabla = "<table><tr><th>ID</th><th>FECHA</th><th>CALIFICACION</th><th>PLACA</th></tr>";
 
@@ -81,22 +80,21 @@ if ($total_paginas > 1) {
 if ($total_paginas > 1) {
   $tabla .= "<div class=\"pagination\">";
   $tabla .= "<ul>";
-  if ($pagina != 1){
-    $tabla .= "<li><a class=\"paginate\" data=\"".($pagina-1)."\">Anterior</a></li>";
-    for ($i=1;$i<=$total_paginas;$i++) {
-      if ($pagina == $i)
-        //si muestro el índice de la página actual, no coloco enlace
-        $tabla .= "<li class=\"active\"><a>".$i."</a></li>";
-      else
-        //si el índice no corresponde con la página mostrada actualmente,
-        //coloco el enlace para ir a esa página
-        $tabla .= "<li><a class=\"paginate\" data=\"".$i."\">".$i."</a></li>";
-    }
-    if ($pagina != $total_paginas)
-      $tabla .= "<li><a class=\"paginate\" data=\"".($pagina+1)."\">Siguiente</a></li>";
+    if ($pagina != 1)
+        $tabla .= "<li><a class=\"paginate\" data=\"".($pagina-1)."\">Anterior</a></li>";
+      for ($i=1;$i<=$total_paginas;$i++) {
+        if ($pagina == $i)
+          //si muestro el índice de la página actual, no coloco enlace
+          $tabla .= "<li class=\"active\"><a>".$i."</a></li>";
+        else
+          //si el índice no corresponde con la página mostrada actualmente,
+          //coloco el enlace para ir a esa página
+          $tabla .= "<li><a class=\"paginate\" data=\"".$i."\">".$i."</a></li>";
+      }
+      if ($pagina != $total_paginas)
+        $tabla .= "<li><a class=\"paginate\" data=\"".($pagina+1)."\">Siguiente</a></li>";
   $tabla .= "</ul>";
   $tabla .= "</div>";
-  }
 }
 
 header("Content-type: text/json");
