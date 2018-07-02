@@ -17,7 +17,7 @@
       });
 
       $(document).ready(function() {    
-        $('.paginate').live('click', function(){
+        $('.consultar_p').live('click', function(){
             var page = $(this).attr('data');        
             alert(page);
         });              
