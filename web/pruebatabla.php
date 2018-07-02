@@ -21,8 +21,8 @@
           e.preventDefault();    
       })
 
-      function paginar(placa, pagina){
-        alert('info'+placa+' '+pagina);
+      function paginar(){
+        alert('info');
       }
 
     </script>
