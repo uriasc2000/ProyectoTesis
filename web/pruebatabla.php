@@ -17,9 +17,18 @@
       });
 
       $(document).ready(function() {    
-        $('.consultar_p').live('click', function(){
-            var page = $(this).attr('data');        
-            alert(page);
+        $(".paginate").live("click", function(){
+          var page = $(this).attr("data");        
+          var placa = $("#entrada").val();
+          var dataString = "placa="+placa+"&pagina="+page;
+          $.ajax({
+              type: "GET",
+              url: "includes/pagination.php",
+              data: dataString,
+              success: function(data) {
+                  $('#receptor').html(data);
+              }
+          });
         });              
       });    
 
@@ -27,7 +36,7 @@
   </head>
   <body>
     <input type="input" id="entrada" size="25">
-    <input type="button" id="consultar" value="Consultar">
+    <input type="button" id="consultar" value="CONSULTAR">
     <div id="receptor"></div>
     <div id="map"></div>
   </body>
