@@ -21,8 +21,8 @@
           e.preventDefault();    
       })
 
-      function paginar(num){
-        alert('info'+num);
+      function paginar(num,var){
+        alert('info'+num+var);
       }
 
     </script>
@@ -30,7 +30,7 @@
   <body>
     <input type="input" id="entrada" size="25">
     <input type="button" id="consultar" value="Consultar">
-    <input type="button" id="test" value="Consultar" onclick="paginar(25)">
+    <input type="button" id="test" value="Consultar" onclick="paginar(25,'C-123XYZ')">
     <div id="receptor"></div>
     <div id="map"></div>
   </body>
