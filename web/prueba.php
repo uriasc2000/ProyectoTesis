@@ -79,7 +79,7 @@ if ($total_paginas > 1) {
 
 if ($total_paginas > 1) {
   $tabla .= "<div>";
-  $tabla .= "<form>";
+  //$tabla .= "<form>";
   //$tabla .= "<ul>";
     if ($pagina != 1)
         $tabla .= "<a href=\"#\" onclick=\"paginar('".$placa."',".$pagina.")\">Anterior</a>";
@@ -99,7 +99,7 @@ if ($total_paginas > 1) {
         $tabla .= "<a  href=\"#\" onclick=\"paginar('".$placa."',".$pagina.")\">Siguiente</a>";
         //$tabla .= '<input type="button" onclick="paginar('.$placa.','.$pagina.')" value="Siguiente">';
   //$tabla .= "</ul>";
-  $tabla .= "</form>";
+  //$tabla .= "</form>";
   $tabla .= "</div>";
 }
 

@@ -21,15 +21,20 @@
           e.preventDefault();    
       })
 
-      function paginar(texto,valor){
-        alert('info'+texto+valor);
+      function paginar(var_placa,var_pagina){
+        //alert('info'+texto+valor);
+        $.get("prueba.php",{placa:var_placa,pagina:var_pagina},function(data){
+            $("#receptor").html("");
+            $("#receptor").append(data);
+          },"json");
       }
+
 
     </script>
   </head>
   <body>
     <input type="input" id="entrada" size="25">
-    <input type="button" id="consultar" value="Consultar">
+    <input type="button" id="consultar" value="CONSULTAR">
     <div id="receptor"></div>
     <div id="map"></div>
   </body>
