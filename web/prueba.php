@@ -62,7 +62,8 @@ $tabla .= "<br>";
 
 if ($total_paginas > 1) {
   if ($pagina != 1)
-     $tabla .= "<a href=\"".$url."?placa=".$placa."&pagina=".($pagina-1)."\"><=</a>";
+     //$tabla .= "<a href=\"".$url."?placa=".$placa."&pagina=".($pagina-1)."\"><=</a>";
+     $tabla .= "<input type=\"button\" id=\"consultar\" value=\"".$pagina."\">";
      for ($i=1;$i<=$total_paginas;$i++) {
         if ($pagina == $i)
            //si muestro el índice de la página actual, no coloco enlace
@@ -70,10 +71,10 @@ if ($total_paginas > 1) {
         else
            //si el índice no corresponde con la página mostrada actualmente,
            //coloco el enlace para ir a esa página
-           $tabla .= "<a href=\"".$url."?placa=".$placa."&pagina=".$i."\">".$i."</a>";
+           $tabla .= $tabla .= "<input type=\"button\" id=\"consultar\" value=\"".$pagina."\">";
      }
      if ($pagina != $total_paginas)
-     $tabla .= "<a href=\"".$url."?placa=".$placa."&pagina=".($pagina+1)."\">=></a>";
+     $tabla .= $tabla .= "<input type=\"button\" id=\"consultar\" value=\"".$pagina."\">";
 }
 
 header("Content-type: text/json");
