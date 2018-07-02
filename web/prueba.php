@@ -79,21 +79,21 @@ if ($total_paginas > 1) {
 
 if ($total_paginas > 1) {
   $tabla .= "<div>";
-  $tabla .= "<ul>";
+  //$tabla .= "<ul>";
     if ($pagina != 1)
-        $tabla .= "<li><a data=\"".($pagina-1)."\">Anterior</a></li>";
+        $tabla .= "<a data=\"".($pagina-1)."\">Anterior</a>";
       for ($i=1;$i<=$total_paginas;$i++) {
         if ($pagina == $i)
           //si muestro el índice de la página actual, no coloco enlace
-          $tabla .= "<li><a>".$i."</a></li>";
+          $tabla .= "<a>".$i."</a>";
         else
           //si el índice no corresponde con la página mostrada actualmente,
           //coloco el enlace para ir a esa página
-          $tabla .= "<li><a data=\"".$i."\">".$i."</a></li>";
+          $tabla .= "<a data=\"".$i."\">".$i."</a>";
       }
       if ($pagina != $total_paginas)
-        $tabla .= "<li><a data=\"".($pagina+1)."\">Siguiente</a></li>";
-  $tabla .= "</ul>";
+        $tabla .= "<a data=\"".($pagina+1)."\">Siguiente</a>";
+  //$tabla .= "</ul>";
   $tabla .= "</div>";
 }
 
