@@ -16,11 +16,20 @@
       });
       });
 
+      //evitamos el comportamiento por defecto de los links
+      $(document).on("click", "a", function(e){
+          e.preventDefault();    
+      })
+
+      function paginar(placa, pagina){
+        alert('info'+placa+' '+pagina);
+      }
+
     </script>
   </head>
   <body>
     <input type="input" id="entrada" size="25">
-    <input type="button" id="consultar" value="CONSULTAR">
+    <input type="button" id="consultar" value="Consultar">
     <div id="receptor"></div>
     <div id="map"></div>
   </body>
