@@ -73,7 +73,7 @@ if ($total_paginas > 1) {
            $tabla .= "<a href=\"".$url."?placa='".$placa."'&pagina=".$i."\">".$i."</a>";
      }
      if ($pagina != $total_paginas)
-     $tabla .= "<a href=\"".$url."?pagina=".($pagina+1)."\">=></a>";
+     $tabla .= "<a href=\"".$url."?placa='".$placa."'&pagina=".($pagina+1)."\">=></a>";
 }
 
 header("Content-type: text/json");
