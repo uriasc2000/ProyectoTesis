@@ -89,7 +89,7 @@ if ($total_paginas > 1) {
         else
           //si el índice no corresponde con la página mostrada actualmente,
           //coloco el enlace para ir a esa página
-          $tabla .= "<a href=\"#\" onclick=\"paginar(".$placa.",".$pagina.")\">".$i."</a>";
+          $tabla .= "<a href=\"#\" onclick=\"paginar(".$placa.",".$i.")\">".$i."</a>";
       }
       if ($pagina != $total_paginas)
         $tabla .= "<a  href=\"#\" onclick=\"paginar(".$placa.",".$pagina.")\">Siguiente</a>";
