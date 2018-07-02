@@ -27,7 +27,7 @@
   </head>
   <body>
     <input type="input" id="entrada" size="25">
-    <input type="button" id="consultar" value="consultar">
+    <input type="button" id="consultar" value="CONSULTAR">
     <div id="receptor"></div>
     <div id="map"></div>
   </body>
