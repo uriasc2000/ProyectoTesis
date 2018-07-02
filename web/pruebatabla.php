@@ -21,8 +21,8 @@
           e.preventDefault();    
       })
 
-      function paginar(texto){
-        alert('info'+texto);
+      function paginar(texto,valor){
+        alert('info'+texto+valor);
       }
 
     </script>
@@ -30,7 +30,8 @@
   <body>
     <input type="input" id="entrada" size="25">
     <input type="button" id="consultar" value="Consultar">
-    <input type="button" id="test" value="Consultar" onclick="paginar('C123XYZ')">
+    <input type="button" id="test" value="Consultar" onclick="paginar('C123XYZ',25)">
+    <a href="#" onclick="paginar('C-123XYZ',2)">2</a>
     <div id="receptor"></div>
     <div id="map"></div>
   </body>
