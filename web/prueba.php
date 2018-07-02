@@ -70,10 +70,10 @@ if ($total_paginas > 1) {
         else
            //si el índice no corresponde con la página mostrada actualmente,
            //coloco el enlace para ir a esa página
-           $tabla .= "<input type=\"button\" id=\"consultar_page\" value=\"".$pagina."\">";
+           $tabla .= "<input type=\"button\" id=\"consultar_page\" value=\"".$i."\">";
      }
      if ($pagina != $total_paginas)
-     $tabla .= "<input type=\"button\" id=\"consultar_page\" value=\"".$pagina."\">";
+     $tabla .= "<input type=\"button\" id=\"consultar_page\" value=\"".$i."\">";
 }
 
 header("Content-type: text/json");
