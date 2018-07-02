@@ -30,7 +30,7 @@
   <body>
     <input type="input" id="entrada" size="25">
     <input type="button" id="consultar" value="Consultar">
-    <input type="button" id="test" value="Consultar" onclick="paginar('C-123XYZ')">
+    <input type="button" id="test" value="Consultar" onclick="paginar(C-123XYZ)">
     <div id="receptor"></div>
     <div id="map"></div>
   </body>
