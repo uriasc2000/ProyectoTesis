@@ -16,36 +16,11 @@
       });
       });
 
-      $(document).ready(function() {    
-        $(".paginate").live("click", function(){
-          var page = $(this).attr("data");        
-          var placa = $("#entrada").val();
-          var dataString = "placa="+placa+"&pagina="+page;
-          $.ajax({
-              type: "GET",
-              url: "includes/pagination.php",
-              data: dataString,
-              success: function(data) {
-                  $('#receptor').html(data);
-              }
-          });
-        });              
-      });    
-
-      $(function(){
-        $("#test").click(function(){
-          var texto = $(this).val();
-          alert("HOLA" + texto);
-      });
-      });
-      
     </script>
   </head>
   <body>
     <input type="input" id="entrada" size="25">
     <input type="button" id="consultar" value="CONSULTAR">
-    <input type="button" id="test" value="Marvin">
-    <input type="button" id="test" value="Rafael">
     <div id="receptor"></div>
     <div id="map"></div>
   </body>
