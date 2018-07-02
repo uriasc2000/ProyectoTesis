@@ -32,11 +32,20 @@
         });              
       });    
 
+      $(function(){
+        $("#test").click(function(){
+          var texto = $(this).val();
+          alert("HOLA" + texto);
+      });
+      });
+      
     </script>
   </head>
   <body>
     <input type="input" id="entrada" size="25">
     <input type="button" id="consultar" value="CONSULTAR">
+    <input type="button" id="test" value="Marvin">
+    <input type="button" id="test" value="Rafael">
     <div id="receptor"></div>
     <div id="map"></div>
   </body>
