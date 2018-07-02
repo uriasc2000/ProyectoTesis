@@ -21,8 +21,8 @@
           e.preventDefault();    
       })
 
-      function paginar(num,var){
-        alert('info'+num+var);
+      function paginar(var){
+        alert('info'+var);
       }
 
     </script>
