@@ -87,7 +87,7 @@ if ($total_paginas > 1) {
       for ($i=1;$i<=$total_paginas;$i++) {
         if ($pagina == $i)
           //si muestro el índice de la página actual, no coloco enlace
-          $tabla .= "<a>".$i."</a>";
+          $tabla .= "<a>[".$i."]</a>";
           //$tabla .= '<input type="button" onclick="paginar('.$placa.','.$i.')" value="'.$i.'">';
         else
           //si el índice no corresponde con la página mostrada actualmente,
@@ -96,7 +96,7 @@ if ($total_paginas > 1) {
           //$tabla .= '<input type="button" onclick="paginar('.$placa.','.$i.')" value="'.$i.'">';
       }
       if ($pagina != $total_paginas)
-        $tabla .= "<a  href=\"#\" onclick=\"paginar('".$placa."',".($pagina+1).")\">[->]></a>";
+        $tabla .= "<a  href=\"#\" onclick=\"paginar('".$placa."',".($pagina+1).")\">[->]</a>";
         //$tabla .= '<input type="button" onclick="paginar('.$placa.','.$pagina.')" value="Siguiente">';
   //$tabla .= "</ul>";
   //$tabla .= "</form>";
