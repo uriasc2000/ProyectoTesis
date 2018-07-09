@@ -18,8 +18,8 @@
     </style>
   </head>
   <body>
-    <div id="map" style="width:50%;height:500px; border-radius:5px;border:1px solid  #3498db ;"></div>
-    <div id="grafico" style="width:50%;height:500px; border-radius:5px;border:1px solid  #3498db ;"></div>
+    <div id="map" style="width:100%;height:500px; border-radius:5px;border:1px solid  #3498db ;"></div>
+    <div id="grafico" style="width:100%;height:500px; border-radius:5px;border:1px solid  #3498db ;"></div>
     <div id="ingreso">
       <form> 
         <?php
