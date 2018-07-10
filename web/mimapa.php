@@ -12,7 +12,9 @@
         Se presentan los resultados del viaje
       </div>
     </div>
-    <div id="map" style="width:100%;height:100%; border-radius:5px;border:1px solid  #3498db;"></div>
+    <center>
+    <div id="map" style="width:75%;height:500px; border-radius:5px;border:1px solid  #3498db ;"></div>
+    </center>
         <div id="ingreso">
           <form> 
             <?php
