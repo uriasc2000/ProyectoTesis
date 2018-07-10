@@ -34,13 +34,13 @@ if (!$db_selected) {
 
 //Crear query para obtener datos
 //$query_all = "select * from VIAJE where placa = '$placa'";
-$query_all = "select V.* from VIAJE V inner join PUNTO P ON V.ID = P.ID_VIAJE where placa = '$placa'";
+$query_all = "select DISTINCT V.* from VIAJE V inner join PUNTO P ON V.ID = P.ID_VIAJE where placa = '$placa'";
 $result_all = mysqli_query($connection,$query_all)or die("Consulta fallida 4:" . mysqli_error($connection));
 $num_total_registros = mysqli_num_rows($rs_noticias);
 $total_paginas = ceil($num_total_registros / $TAMANO_PAGINA);
 
 //$query_page = "select * from VIAJE where placa = '$placa' order by fecha,id desc LIMIT $inicio,$TAMANO_PAGINA";
-$query_page = "select V.* from VIAJE V inner join PUNTO P ON V.ID = P.ID_VIAJE where placa = '$placa' order by fecha,id desc LIMIT $inicio,$TAMANO_PAGINA";
+$query_page = "select DISTINCT V.* from VIAJE V inner join PUNTO P ON V.ID = P.ID_VIAJE where placa = '$placa' order by fecha,id desc LIMIT $inicio,$TAMANO_PAGINA";
 $result_page = mysqli_query($connection,$query_page)or die("Consulta fallida 4:" . mysqli_error($connection));
 
 header("Content-type: text/xml");
