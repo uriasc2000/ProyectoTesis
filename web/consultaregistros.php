@@ -36,7 +36,11 @@
     </script>
   </head>
   <body>
-  <div>
+  <div class="card">
+  <h5 class="card-header">Consulta de registros</h5>
+  <div class="card-body">
+
+<div>
   <form class="form-inline">
     <div class="form-group mb-2">
       <label for="lbl_entrada" class="sr-only">INGRESE PLACA BUS</label>
@@ -50,5 +54,10 @@
   </form>
   </div>
   <div id="receptor"></div>
+
+
+  </div>
+  </div>
+  
   </body>
 </html>
