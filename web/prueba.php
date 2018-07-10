@@ -80,7 +80,7 @@ if ($total_paginas > 1) {
 if ($total_paginas > 1) {
   $tabla .= "<div>";
   //$tabla .= "<form>";
-  $tabla .= "<ul>";
+  $tabla .= "<ul class=\"pagination\">";
     if ($pagina != 1)
         $tabla .= "<li><a href=\"#\" onclick=\"paginar('".$placa."',".($pagina-1).")\">&laquo;</a></li>";
         //$tabla .= '<input type="button" onclick="paginar('.$placa.','.$pagina.')" value="Anterior">';
