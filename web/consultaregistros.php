@@ -50,13 +50,12 @@
       <label for="entrada" class="sr-only">Entrada</label>
       <input type="text" class="form-control" id="entrada">
     </div>
-    
-    <button type="button" class="btn btn-primary" value="CONSULTAR">Primary</button>
+  </form>
+  <form>
+  <input type="button" id="Consultar" value="CONSULTAR" class="btn btn-primary">
   </form>
   </div>
   <div id="receptor"></div>
-
-
   </div>
   </div>
   
