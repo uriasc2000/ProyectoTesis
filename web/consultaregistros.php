@@ -3,7 +3,7 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <title>Viaje</title>
-    <script type="text/javascript" src="jquery/jquery.min.js"></script>
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     
 
@@ -36,8 +36,9 @@
     </script>
   </head>
   <body>
-    <input type="input" id="entrada" size="25">
-    <input type="button" id="consultar" value="CONSULTAR">
+    <label for="entrada">Ingrese placa del bus</label>
+    <input type="input" id="entrada" size="25" class="form-control">
+    <input type="button" id="consultar" value="CONSULTAR" class="btn btn-primary">
     <div id="receptor"></div>
     <div id="map"></div>
 
