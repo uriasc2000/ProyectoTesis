@@ -80,25 +80,25 @@ if ($total_paginas > 1) {
 if ($total_paginas > 1) {
   $tabla .= "<div>";
   //$tabla .= "<form>";
-  //$tabla .= "<ul>";
+  $tabla .= "<ul>";
     if ($pagina != 1)
-        $tabla .= "<a href=\"#\" onclick=\"paginar('".$placa."',".($pagina-1).")\">[<-]</a>";
+        $tabla .= "<li><a href=\"#\" onclick=\"paginar('".$placa."',".($pagina-1).")\">&laquo;</a></li>";
         //$tabla .= '<input type="button" onclick="paginar('.$placa.','.$pagina.')" value="Anterior">';
       for ($i=1;$i<=$total_paginas;$i++) {
         if ($pagina == $i)
           //si muestro el índice de la página actual, no coloco enlace
-          $tabla .= "<a>[".$i."]</a>";
+          $tabla .= "<li><a>".$i."</a></li>";
           //$tabla .= '<input type="button" onclick="paginar('.$placa.','.$i.')" value="'.$i.'">';
         else
           //si el índice no corresponde con la página mostrada actualmente,
           //coloco el enlace para ir a esa página
-          $tabla .= "<a href=\"#\" onclick=\"paginar('".$placa."',".$i.")\">[".$i."]</a>";
+          $tabla .= "<li><a href=\"#\" onclick=\"paginar('".$placa."',".$i.")\">".$i."</a></li>";
           //$tabla .= '<input type="button" onclick="paginar('.$placa.','.$i.')" value="'.$i.'">';
       }
       if ($pagina != $total_paginas)
-        $tabla .= "<a  href=\"#\" onclick=\"paginar('".$placa."',".($pagina+1).")\">[->]</a>";
+        $tabla .= "<li><a  href=\"#\" onclick=\"paginar('".$placa."',".($pagina+1).")\">&raquo;</a></li>";
         //$tabla .= '<input type="button" onclick="paginar('.$placa.','.$pagina.')" value="Siguiente">';
-  //$tabla .= "</ul>";
+  $tabla .= "</ul>";
   //$tabla .= "</form>";
   $tabla .= "</div>";
 }
