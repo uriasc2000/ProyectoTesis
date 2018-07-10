@@ -5,17 +5,23 @@
     <title>Mapa de recorrido</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   
-    
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+      * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+    </style>  
   
   </head>
   <body>
     <div class="card">
       <h5 class="card-header">Presentación grafica de recorrido</h5>
       <div class="card-body">
-        
+        Se presentan los resultados del viaje
       </div>
     </div>
-    <div id="map" style="width:50%;height:500px; border-radius:5px;border:1px solid  #3498db ;"></div>
+    <div id="map"></div>
         <div id="ingreso">
           <form> 
             <?php
