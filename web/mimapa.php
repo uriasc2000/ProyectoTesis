@@ -20,10 +20,7 @@
     <div class="card">
       <h5 class="card-header">Presentación grafica de recorrido</h5>
       <div class="card-body">
-        
-      </div>
-    </div>
-    <div id="map" ></div>
+      <div id="map" ></div>
         <div id="ingreso">
           <form> 
             <?php
@@ -32,6 +29,9 @@
             ?>                                
           </form>
         </div>    
+      </div>
+    </div>
+    
     <script>
       var customLabel = {
         restaurant: {
