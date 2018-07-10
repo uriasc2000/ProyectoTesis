@@ -9,12 +9,9 @@
     <div class="card">
       <h5 class="card-header">Presentación grafica de recorrido</h5>
       <div class="card-body">
-        Se presentan los resultados del viaje
-      </div>
-    </div>
-    <center>
-    <div id="map" style="width:75%;height:500px; border-radius:5px;border:1px solid  #3498db ;"></div>
-    </center>
+        <center>
+          <div id="map" style="width:75%;height:500px; border-radius:5px;border:1px solid  #3498db ;"></div>
+        </center>
         <div id="ingreso">
           <form> 
             <?php
@@ -22,7 +19,10 @@
               echo "<input type=\"hidden\" value =\"$viaje\" name =\"viaje\" id=\"viaje\"/>";
             ?>                                
           </form>
-        </div>    
+        </div>        
+      </div>
+    </div>
+    
     <script>
       var customLabel = {
         restaurant: {
