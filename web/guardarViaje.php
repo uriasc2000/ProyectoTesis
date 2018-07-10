@@ -46,4 +46,10 @@ if($inicioViaje==1){//Inicio del viaje
     mysqli_close($conexion);
 }
 
+$coordenadas = array('latitud'=> $latitud, 'longitud'=> $longitud, 'velocidad'=> $velocidad);	//Creamos el array
+//Creamos el JSON
+$json_string = json_encode($coordenadas);
+$file = 'coordenadas.json';
+file_put_contents($file, $json_string);
+
 ?>
