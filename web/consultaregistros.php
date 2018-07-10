@@ -36,51 +36,19 @@
     </script>
   </head>
   <body>
-    <form>  
-    <div id="frm_consulta">
-      <div class="form-group">
-        <label for="entrada">Ingrese placa del bus</label>
-        <input type="input" id="entrada" class="form-control">
-      </div>
-      <input type="button" id="consultar" value="CONSULTAR" class="btn btn-primary">
+  <div>
+  <form class="form-inline">
+    <div class="form-group mb-2">
+      <label for="lbl_entrada" class="sr-only">INGRESE PLACA BUS</label>
+      <input type="text" readonly class="form-control-plaintext" id="lbl_entrada" value="INGRESE PLACA BUS">
     </div>
-    </form>
-
-
-<form>
-  <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    <div class="form-group mx-sm-3 mb-2">
+      <label for="entrada" class="sr-only">Entrada</label>
+      <input type="text" class="form-control" id="entrada">
+    </div>
+    <input type="button" id="consultar" value="CONSULTAR" class="btn btn-primary">
+  </form>
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-  </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary" value="CONSULTAR">Submit</button>
-</form>
-
-<form class="form-inline">
-  <div class="form-group mb-2">
-    <label for="staticEmail2" class="sr-only">Email</label>
-    <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
-  </div>
-  <div class="form-group mx-sm-3 mb-2">
-    <label for="inputPassword2" class="sr-only">Password</label>
-    <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
-  </div>
-  <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
-</form>
-
-    <div id="receptor"></div>
-    <div id="map"></div>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <div id="receptor"></div>
   </body>
 </html>
