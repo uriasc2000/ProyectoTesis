@@ -12,11 +12,7 @@
         height: 100%;
       }
       /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
+
     </style>
   
   </head>
