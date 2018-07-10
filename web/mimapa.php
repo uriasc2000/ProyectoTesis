@@ -18,15 +18,20 @@
     </style>
   </head>
   <body>
-    <div id="map" style="width:100%;height:500px; border-radius:5px;border:1px solid  #3498db ;"></div>
-    <div id="grafico" style="width:100%;height:500px; border-radius:5px;border:1px solid  #3498db ;"></div>
-    <div id="ingreso">
-      <form> 
-        <?php
-          $viaje = $_GET['viaje'];
-          echo "<input type=\"hidden\" value =\"$viaje\" name =\"viaje\" id=\"viaje\"/>";
-        ?>                                
-      </form>
+    
+    <div class="card">
+      <h5 class="card-header">Presentación grafica de recorrido</h5>
+      <div class="card-body">
+        <div id="map"></div>
+        <div id="ingreso">
+          <form> 
+            <?php
+              $viaje = $_GET['viaje'];
+              echo "<input type=\"hidden\" value =\"$viaje\" name =\"viaje\" id=\"viaje\"/>";
+            ?>                                
+          </form>
+        </div>    
+      </div>
     </div>
     <script>
       var customLabel = {
