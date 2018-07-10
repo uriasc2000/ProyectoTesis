@@ -30,12 +30,14 @@ if (!$db_selected) {
 }
 
 //Crear query para obtener datos
-$query_all = "select * from VIAJE where placa = '$placa'";
+//$query_all = "select * from VIAJE where placa = '$placa'";
+$query_all = "select * from VIAJE where placa = '$placa' and ID IN (select DISTINCT id_viaje from PUNTO)";
 $result_all = mysqli_query($connection,$query_all)or die("Consulta fallida 4:" . mysqli_error($connection));
 $num_total_registros = mysqli_num_rows($result_all);
 $total_paginas = ceil($num_total_registros / $TAMANO_PAGINA);
 
-$query_page = "select * from VIAJE where placa = '$placa' order by fecha,id desc LIMIT $inicio,$TAMANO_PAGINA";
+//$query_page = "select * from VIAJE where placa = '$placa' order by fecha,id desc LIMIT $inicio,$TAMANO_PAGINA";
+$query_page = "select * from VIAJE where placa = '$placa' and ID IN (select DISTINCT id_viaje from PUNTO) order by fecha,id desc LIMIT $inicio,$TAMANO_PAGINA";
 $result_page = mysqli_query($connection,$query_page)or die("Consulta fallida 4:" . mysqli_error($connection));
 
 $tabla = "<table class=\"table table-bordered\"><tr><th>ID</th><th>FECHA</th><th>CALIFICACION</th><th>PLACA</th><th>ACCION</th></tr>";
