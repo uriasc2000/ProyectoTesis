@@ -49,7 +49,7 @@
             <label for="entrada" class="sr-only">Entrada</label>
             <input type="text" class="form-control" id="entrada">
             </div>
-            <input type="button" id="Consultar" value="CONSULTAR" class="btn btn-primary">
+            <input type="button" id="consultar" value="CONSULTAR" class="btn btn-primary">
           </form>
         </div>
         <div id="receptor"></div>
