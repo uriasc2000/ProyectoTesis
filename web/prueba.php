@@ -38,7 +38,7 @@ $total_paginas = ceil($num_total_registros / $TAMANO_PAGINA);
 $query_page = "select * from VIAJE where placa = '$placa' order by fecha,id desc LIMIT $inicio,$TAMANO_PAGINA";
 $result_page = mysqli_query($connection,$query_page)or die("Consulta fallida 4:" . mysqli_error($connection));
 
-$tabla = "<table><tr><th>ID</th><th>FECHA</th><th>CALIFICACION</th><th>PLACA</th></tr>";
+$tabla = "<table class=\"table table-bordered\"><tr><th>ID</th><th>FECHA</th><th>CALIFICACION</th><th>PLACA</th></tr>";
 
 foreach($result_page as $i){
     $tabla .= "<tr>";
