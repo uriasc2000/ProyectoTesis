@@ -36,26 +36,24 @@
     </script>
   </head>
   <body>
-  <div class="card">
-  <h5 class="card-header">Consulta de registros</h5>
-  <div class="card-body">
-
-<div>
-  <form class="form-inline">
-    <div class="form-group mb-2">
-      <label for="lbl_entrada" class="sr-only">INGRESE PLACA BUS</label>
-      <input type="text" readonly class="form-control-plaintext" id="lbl_entrada" value="INGRESE PLACA BUS">
+    <div class="card">
+      <h5 class="card-header">Consulta de registros</h5>
+      <div class="card-body">
+        <div>
+          <form class="form-inline">
+            <div class="form-group mb-2">
+            <label for="lbl_entrada" class="sr-only">INGRESE PLACA BUS</label>
+            <input type="text" readonly class="form-control-plaintext" id="lbl_entrada" value="INGRESE PLACA BUS">
+            </div>
+            <div class="form-group mx-sm-3 mb-2">
+            <label for="entrada" class="sr-only">Entrada</label>
+            <input type="text" class="form-control" id="entrada">
+            </div>
+            <input type="button" id="Consultar" value="CONSULTAR" class="btn btn-primary">
+          </form>
+        </div>
+        <div id="receptor"></div>
+      </div>
     </div>
-    <div class="form-group mx-sm-3 mb-2">
-      <label for="entrada" class="sr-only">Entrada</label>
-      <input type="text" class="form-control" id="entrada">
-    </div>
-    <input type="button" id="Consultar" value="CONSULTAR" class="btn btn-primary">
-  </form>
-  </div>
-  <div id="receptor"></div>
-  </div>
-  </div>
-  
   </body>
 </html>
