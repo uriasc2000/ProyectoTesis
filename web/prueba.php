@@ -48,7 +48,7 @@ foreach($result_page as $i){
     $tabla .= "<td>".$i['PLACA']."</td>";
     $tabla .= "<td><form action=\"mimapa.php\" method =\"GET\">";                                
     $tabla .= "<input type=\"hidden\" value =\"".$i['ID']."\" name =\"viaje\" id=\"viaje\" />";
-    $tabla .= "<input type=\"submit\" value=\"Ver\"/>";
+    $tabla .= "<input class=\"btn btn-success\" type=\"submit\" value=\"Ver\"/>";
     $tabla .= "</form></td>";          
     $tabla .= "</tr>";
 }
